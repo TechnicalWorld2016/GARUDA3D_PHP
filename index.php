@@ -22,6 +22,8 @@ a { text-decoration: none; }
 .hero h1 {
     font-size: 44px;
     margin-bottom: 10px;
+    
+    
 }
 .hero p {
     font-size: 18px;
@@ -76,8 +78,8 @@ a { text-decoration: none; }
 }
 .blog-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 270px;
+    object-fit: static;
 }
 .blog-card .content {
     padding: 15px;
