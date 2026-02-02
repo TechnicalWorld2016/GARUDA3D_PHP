@@ -1,0 +1,153 @@
+/* ===== BLOG GLOBAL ===== */
+.blog-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+.blog-container h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.blog-container h4 {
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+/* ===== BLOG IMAGES ===== */
+.blog-container img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* ===== BLOG CONTENT ===== */
+.blog-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+/* ===== BACK LINK ===== */
+.blog-back {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.blog-back:hover {
+    text-decoration: underline;
+}
+
+/* ===== BLOG LIST PAGE ===== */
+.blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.blog-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.blog-card img {
+    height: 150px;
+}
+
+.blog-card-content {
+    padding: 15px;
+}
+
+.blog-card-content h3 {
+    margin: 5px 0 10px;
+}
+
+.blog-card-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+.blog-card-content a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* ===== ADD BLOG FORM ===== */
+.blog-form {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.blog-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.blog-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.blog-form input[type="text"],
+.blog-form textarea,
+.blog-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.blog-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.blog-form button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #203a43;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.blog-form button:hover {
+    background: #2c5364;
+}
+
+.blog-form .note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+}

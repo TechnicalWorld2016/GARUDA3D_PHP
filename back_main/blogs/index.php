@@ -2,22 +2,38 @@
 include "../includes/db.php";
 include "../includes/header.php";
 
-$result = $conn->query("SELECT id, title, subtitle, image FROM blogs ORDER BY id DESC");
+$result = $conn->query("SELECT * FROM blogs ORDER BY id DESC");
 ?>
 
-<h2>Blogs</h2>
+<div class="blog-container">
+    <h2>All Blogs</h2>
 
-<?php if ($result && $result->num_rows > 0): ?>
-    <?php while ($row = $result->fetch_assoc()): ?>
-        <div style="margin-bottom:30px;">
-            <img src="../assets/images/blogs/<?php echo htmlspecialchars($row['image']); ?>" width="200"><br><br>
-            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
-            <p><?php echo htmlspecialchars($row['subtitle']); ?></p>
-            <a href="view.php?id=<?php echo $row['id']; ?>">Read more</a>
-        </div>
-    <?php endwhile; ?>
-<?php else: ?>
-    <p>No blogs found.</p>
-<?php endif; ?>
+    <div class="blog-list">
+
+        <?php if ($result && $result->num_rows > 0): ?>
+
+            <?php while ($row = $result->fetch_assoc()): ?>
+
+                <div class="blog-card">
+                    <?php if (!empty($row['image'])): ?>
+                        <img src="../assets/images/blogs/<?php echo htmlspecialchars($row['image']); ?>">
+                    <?php endif; ?>
+
+                    <div class="blog-card-content">
+                        <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                        <p><?php echo htmlspecialchars($row['subtitle']); ?></p>
+
+                        <a href="view.php?id=<?php echo $row['id']; ?>">Read more →</a>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+
+        <?php else: ?>
+            <p>No blogs found.</p>
+        <?php endif; ?>
+
+    </div>
+</div>
 
 <?php include "../includes/footer.php"; ?>

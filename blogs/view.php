@@ -25,13 +25,32 @@ if ($result->num_rows === 0) {
 $blog = $result->fetch_assoc();
 ?>
 
-<h2><?php echo htmlspecialchars($blog['title']); ?></h2>
-<h4><?php echo htmlspecialchars($blog['subtitle']); ?></h4>
+<div class="blog-container">
 
-<img src="../assets/images/blogs/<?php echo htmlspecialchars($blog['image']); ?>" width="500"><br><br>
+    <h2><?php echo htmlspecialchars($blog['title']); ?></h2>
+    <h4><?php echo htmlspecialchars($blog['subtitle']); ?></h4>
 
-<p><?php echo nl2br(htmlspecialchars($blog['content'])); ?></p>
+    <img src="../assets/images/blogs/<?php echo htmlspecialchars($blog['image']); ?>">
 
-<a href="index.php">← Back to blogs</a>
+    <p><?php echo nl2br(htmlspecialchars($blog['content'])); ?></p>
 
-<?php include "../includes/footer.php"; ?>
+    <?php if (!empty($blog['image2'])): ?>
+        <img src="../assets/images/blogs/<?php echo htmlspecialchars($blog['image2']); ?>">
+    <?php endif; ?>
+
+    <?php if (!empty($blog['image3'])): ?>
+        <img src="../assets/images/blogs/<?php echo htmlspecialchars($blog['image3']); ?>">
+    <?php endif; ?>
+
+    <?php if (!empty($blog['extra_content'])): ?>
+        <p><?php echo nl2br(htmlspecialchars($blog['extra_content'])); ?></p>
+    <?php endif; ?>
+
+    <a class="blog-back" href="index.php">← Back to blogs</a>
+
+</div>
+
+
+
+
+
